@@ -15,16 +15,18 @@ public class Fire : MonoBehaviour
 			return _inst;
 		}
 	}
-
-	// Use this for initialization
+		
 	void Start ()
 	{
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		
+	}
+
+	public void ReceiveWood(Tree tree) {
+		Destroy (tree.gameObject);
 	}
 }

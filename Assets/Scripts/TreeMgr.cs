@@ -22,4 +22,10 @@ public class TreeMgr : MonoBehaviour {
 		AllTrees.Add (tree);
 
 	}
+
+	public void Unregister (Tree tree) {
+
+		AllTrees.Remove (tree);
+
+	}
 }

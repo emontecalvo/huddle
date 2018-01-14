@@ -17,6 +17,10 @@ public class Tree : MonoBehaviour {
 		WoodView.SetActive (false);
 	}
 
+	void OnDestroy() {
+		TreeMgr.inst.Unregister (this);
+	}
+
 	// Update is called once per frame
 	void Update () {
 

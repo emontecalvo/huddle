@@ -8,6 +8,7 @@ public class Jello : MonoBehaviour
 	public KeyCode DownKey;
 	public KeyCode LeftKey;
 	public KeyCode RightKey;
+	public Tree BeingHauled = null;
 
 	void Start ()
 	{
@@ -18,6 +19,10 @@ public class Jello : MonoBehaviour
 	{
 		MovementLogic ();
 		ChopTrees ();
+
+		if (BeingHauled != null) {
+			HaulTrees ();
+		}
 	}
 
 	void MovementLogic () {
@@ -46,6 +51,9 @@ public class Jello : MonoBehaviour
 		// for each tree find distance from my jello to tree
 		// if distance is less than X, chop the tree down
 		// add wood to jelllo
+		if (BeingHauled != null) {
+			return;
+		}
 
 		foreach (Tree tree in TreeMgr.inst.AllTrees) {
 			Vector3 toTree = tree.transform.position - transform.position;
@@ -54,7 +62,37 @@ public class Jello : MonoBehaviour
 
 			if (distance <= 1.5f) {
 				tree.GetChopped ();
+				BeingHauled = tree;
 			}
+		}
+
+	}
+
+	void HaulTrees() {
+		Vector3 toWood = BeingHauled.transform.position - transform.position;
+
+		float distance = toWood.magnitude;
+		float followDistance = 1.25f;
+
+		if (distance > followDistance) {
+			Vector3 toWood2 = ( (toWood * followDistance) / distance );
+			Vector3 woodPos2 = transform.position + toWood2;
+			BeingHauled.transform.position = woodPos2;
+			PutWoodInFire ();
+		}
+			
+
+
+	}
+
+	void PutWoodInFire() {
+		Vector3 toFire = Fire.inst.transform.position - transform.position;
+
+		float distanceToFire = toFire.magnitude;
+
+		if (distanceToFire <= 1.25f) {
+			Fire.inst.ReceiveWood (BeingHauled);
+			BeingHauled = null;
 		}
 
 	}
