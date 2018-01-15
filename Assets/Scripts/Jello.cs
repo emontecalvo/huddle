@@ -109,7 +109,7 @@ public class Jello : MonoBehaviour
 		Vector3 toFire = Fire.inst.transform.position - transform.position;
 		float distanceToFire = toFire.magnitude;
 
-		if (distanceToFire > 3) {
+		if (distanceToFire < 3) {
 			IsNextToFire = true;
 		} else {
 			IsNextToFire = false;
