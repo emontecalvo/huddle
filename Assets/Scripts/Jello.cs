@@ -18,6 +18,8 @@ public class Jello : MonoBehaviour
 	public bool AmIFrozen = false;
 	public bool AmIToasty = false;
 
+	public GameObject SpriteMask;
+
 	void Start ()
 	{
 		JelloMgr.inst.Register (this);
@@ -132,7 +134,7 @@ public class Jello : MonoBehaviour
 		}
 
 		if (IsNextToFire == false && IsNextToOther == false) {
-			tempDelta = -0.01f;
+			tempDelta = -0.03f;
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
 				MyTemp = 0;
@@ -180,6 +182,9 @@ public class Jello : MonoBehaviour
 		Debug.Log ("Am I Toasty?" + AmIToasty);
 		Debug.Log (MyTemp);
 
+		float tempRatio = MyTemp / 11f;
+		float maskZPos = tempRatio * -2.4f;
+		SpriteMask.transform.localPosition = new Vector3 (0, 0, maskZPos);
 
 
 	}
