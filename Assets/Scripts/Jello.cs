@@ -11,6 +11,7 @@ public class Jello : MonoBehaviour
 	public Tree BeingHauled = null;
 
 	public float MyTemp = 10.0f;
+	public float tempDelta = 0f;
 
 	public bool IsNextToFire = false;
 	public bool IsNextToOther = false;
@@ -105,6 +106,8 @@ public class Jello : MonoBehaviour
 	}
 
 	void TemperatureLogic() {
+		tempDelta = 0;
+		float maxTemp = 8f;
 
 		Vector3 toFire = Fire.inst.transform.position - transform.position;
 		float distanceToFire = toFire.magnitude;
@@ -129,7 +132,7 @@ public class Jello : MonoBehaviour
 		}
 
 		if (IsNextToFire == false && IsNextToOther == false) {
-			MyTemp -= 0.01f;
+			tempDelta = -0.01f;
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
 				MyTemp = 0;
@@ -138,30 +141,41 @@ public class Jello : MonoBehaviour
 
 		if (IsNextToFire == true && IsNextToOther == true) {
 			AmIFrozen = false;
-			MyTemp += 0.05f;
-			if (MyTemp >= 11) {
-				AmIToasty = true;
-				MyTemp = 11;
-			}
+			tempDelta = 0.05f;
+			maxTemp = 11f;
 		}
 
 		if (IsNextToFire == true && IsNextToOther == false) {
 			AmIFrozen = false;
 			AmIToasty = false;
-			if (MyTemp < 10) {
-				MyTemp += 0.03f;
-			}
+			maxTemp = 10f;
+			tempDelta = 0.03f;
 		}
 
 		if (IsNextToFire == false && IsNextToOther == true) {
 			AmIFrozen = false;
 			AmIToasty = false;
+			tempDelta = 0.02f;
 
-			if (MyTemp < 8) {
-				MyTemp += 0.02f;
-			}
 		}
 
+		MyTemp = MyTemp + tempDelta * Time.deltaTime;
+		if (MyTemp < 0f) {
+			MyTemp = 0f;
+			AmIFrozen = true;
+			AmIToasty = false;
+		}
+		if (MyTemp > maxTemp) {
+			MyTemp = maxTemp;
+		}
+		if (MyTemp >= 11) {
+			AmIFrozen = false;
+			AmIToasty = true;
+		}
+		if (MyTemp < 11 && MyTemp > 0) {
+			AmIFrozen = false;
+			AmIToasty = false;
+		}
 		Debug.Log ("Am I frozen?" + AmIFrozen);
 		Debug.Log ("Am I Toasty?" + AmIToasty);
 		Debug.Log (MyTemp);
