@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jello.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Fire.cs" Line="18" Column="3" />
+      <File FileName="Assets/Scripts/JelloMgr.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Jello.cs" Line="130" Column="3" />
+      <File FileName="Assets/Scripts/TreeMgr.cs" Line="30" Column="3" />
+      <File FileName="Assets/Scripts/Tree.cs" Line="21" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
