@@ -5,6 +5,13 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
 
+
+
+	public List <GameObject> FireFrames = new List<GameObject> ();
+	public int CurrentFrame;
+	public float TimeUntilNextFrame;
+	public float TimeBetweenFrames;
+
 	private static Fire _inst = null;
 
 	public static Fire inst {
@@ -23,7 +30,23 @@ public class Fire : MonoBehaviour
 
 	void Update ()
 	{
-		
+		TimeUntilNextFrame -= Time.deltaTime;
+
+		if (TimeUntilNextFrame <= 0) {
+			TimeUntilNextFrame = TimeBetweenFrames;
+			CurrentFrame = CurrentFrame + 1;
+			if (CurrentFrame >= FireFrames.Count) {
+				CurrentFrame = 0;
+			}
+
+			for (int i = 0; i <= FireFrames.Count; i++) {
+				if (i == CurrentFrame) {
+					FireFrames [i].SetActive (true);
+				} else {
+					FireFrames [i].SetActive (false);
+				}
+			}
+		}
 	}
 
 	public void ReceiveWood(Tree tree) {
