@@ -10,6 +10,13 @@ public class Jello : MonoBehaviour
 	public KeyCode RightKey;
 	public Tree BeingHauled = null;
 
+	public float MyTemp = 10.0f;
+
+	public bool IsNextToFire = false;
+	public bool IsNextToOther = false;
+	public bool AmIFrozen = false;
+	public bool AmIToasty = false;
+
 	void Start ()
 	{
 		JelloMgr.inst.Register (this);
@@ -19,6 +26,7 @@ public class Jello : MonoBehaviour
 	{
 		MovementLogic ();
 		ChopTrees ();
+		TemperatureLogic ();
 
 		if (BeingHauled != null) {
 			HaulTrees ();
@@ -58,7 +66,6 @@ public class Jello : MonoBehaviour
 		foreach (Tree tree in TreeMgr.inst.AllTrees) {
 			Vector3 toTree = tree.transform.position - transform.position;
 			float distance = toTree.magnitude;
-			Debug.Log (distance.ToString());
 
 			if (distance <= 1.5f) {
 				tree.GetChopped ();
@@ -94,6 +101,72 @@ public class Jello : MonoBehaviour
 			Fire.inst.ReceiveWood (BeingHauled);
 			BeingHauled = null;
 		}
+
+	}
+
+	void TemperatureLogic() {
+
+		Vector3 toFire = Fire.inst.transform.position - transform.position;
+		float distanceToFire = toFire.magnitude;
+
+		if (distanceToFire > 3) {
+			IsNextToFire = true;
+		} else {
+			IsNextToFire = false;
+		}
+
+		foreach (Jello jello in JelloMgr.inst.AllJellos) {
+			if (jello != this) {
+				Vector3 toJello = jello.transform.position - transform.position;
+				float distance = toJello.magnitude;
+
+				if (distance <= 1.25f) {
+					IsNextToOther = true;
+				} else {
+					IsNextToOther = false;
+				}				
+			}
+		}
+
+		if (IsNextToFire == false && IsNextToOther == false) {
+			MyTemp -= 0.01f;
+			if (MyTemp <= 0) {
+				AmIFrozen = true;
+				MyTemp = 0;
+			}
+		}
+
+		if (IsNextToFire == true && IsNextToOther == true) {
+			AmIFrozen = false;
+			MyTemp += 0.05f;
+			if (MyTemp >= 11) {
+				AmIToasty = true;
+				MyTemp = 11;
+			}
+		}
+
+		if (IsNextToFire == true && IsNextToOther == false) {
+			AmIFrozen = false;
+			AmIToasty = false;
+			if (MyTemp < 10) {
+				MyTemp += 0.03f;
+			}
+		}
+
+		if (IsNextToFire == false && IsNextToOther == true) {
+			AmIFrozen = false;
+			AmIToasty = false;
+
+			if (MyTemp < 8) {
+				MyTemp += 0.02f;
+			}
+		}
+
+		Debug.Log ("Am I frozen?" + AmIFrozen);
+		Debug.Log ("Am I Toasty?" + AmIToasty);
+		Debug.Log (MyTemp);
+
+
 
 	}
 	
