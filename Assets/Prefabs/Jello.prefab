@@ -232,10 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53edcdd2280f44620910b9512fbc231b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpKey: 113
-  DownKey: 119
-  LeftKey: 101
-  RightKey: 114
+  UpKey: 119
+  DownKey: 115
+  LeftKey: 97
+  RightKey: 100
   BeingHauled: {fileID: 0}
   MyTemp: 10
   tempDelta: 0
