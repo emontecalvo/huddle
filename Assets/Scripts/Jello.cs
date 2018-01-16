@@ -199,9 +199,6 @@ public class Jello : MonoBehaviour
 			AmIFrozen = false;
 			AmIToasty = false;
 		}
-		Debug.Log ("Am I frozen?" + AmIFrozen);
-		Debug.Log ("Am I Toasty?" + AmIToasty);
-		Debug.Log (MyTemp);
 
 		float tempRatio = MyTemp / 11f;
 		float maskZPos = tempRatio * -2.4f;
