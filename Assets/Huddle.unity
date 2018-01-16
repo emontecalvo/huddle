@@ -275,12 +275,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e9747c744a8bb487f9b39afd77811b38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3368a7ba1374442449fdba808f0cdc93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.21, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -717,12 +717,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b4ecf2b39d4a4b1880f49c9bec5db58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f513fc7447174180a2318d005a04ed7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.28, y: 1.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -877,7 +877,7 @@ MonoBehaviour:
   - {fileID: 126289312}
   CurrentFrame: 0
   TimeUntilNextFrame: 0
-  TimeBetweenFrames: 0.3
+  TimeBetweenFrames: 0.5
   CurrentLevel: 1
   WoodAddToFireParticle: {fileID: 1024266117}
 --- !u!4 &527082542
@@ -8406,12 +8406,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0ff9acedd28641bc9451e0050e7834b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e4aa348ac6a348a095a1916410b206f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.08, y: 1.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8807,12 +8807,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64f8d20b136d34cba8c6b742eea78265, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a9d72b2b16049f1b84aa81e834390e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.3, y: 1.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9011,12 +9011,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1026b8f9717140539475cf4533d1a59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cec00d61ce804078ba356ffd32ee570, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.19, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
