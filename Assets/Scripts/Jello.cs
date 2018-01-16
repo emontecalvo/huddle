@@ -18,6 +18,16 @@ public class Jello : MonoBehaviour
 	public bool AmIFrozen = false;
 	public bool AmIToasty = false;
 
+	public SpriteRenderer FaceSprite;
+
+	public Sprite ToastyFace;
+	public Sprite LeftEyes;
+	public Sprite TopEyes;
+	public Sprite RightEyes;
+	public Sprite DownEyes;
+
+	public FacePanelUI CurrentUIFace;
+
 	public GameObject SpriteMask;
 
 	void Start ()
@@ -41,18 +51,26 @@ public class Jello : MonoBehaviour
 
 		if (Input.GetKey (UpKey)) {
 			speed.z = 1;
+			FaceSprite.sprite = TopEyes;
+			CurrentUIFace.SetFace (TopEyes);
 		}
 
 		if (Input.GetKey (DownKey)) {
 			speed.z = -1;
+			FaceSprite.sprite = DownEyes;
+			CurrentUIFace.SetFace (DownEyes);
 		}
 
 		if (Input.GetKey (LeftKey)) {
 			speed.x = -1;
+			FaceSprite.sprite = LeftEyes;
+			CurrentUIFace.SetFace (LeftEyes);
 		}
 
 		if (Input.GetKey (RightKey)) {
 			speed.x = 1;
+			FaceSprite.sprite = RightEyes;
+			CurrentUIFace.SetFace (RightEyes);
 		}
 
 		transform.position = transform.position + speed * Time.deltaTime;
@@ -173,6 +191,9 @@ public class Jello : MonoBehaviour
 		if (MyTemp >= 11) {
 			AmIFrozen = false;
 			AmIToasty = true;
+			FaceSprite.sprite = ToastyFace;
+			CurrentUIFace.SetFace (ToastyFace);
+
 		}
 		if (MyTemp < 11 && MyTemp > 0) {
 			AmIFrozen = false;
