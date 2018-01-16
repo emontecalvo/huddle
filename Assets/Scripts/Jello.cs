@@ -26,18 +26,15 @@ public class Jello : MonoBehaviour
 	public Sprite TopEyes;
 	public Sprite RightEyes;
 	public Sprite DownEyes;
-//	public Text HappyorLonelyTxt;
-//	public Text ToastyOrFrozenTxt;
 
 	public FacePanelUI CurrentUIFace;
-	public FacePanelUI JelloStatsHappyUITxt;
-	public FacePanelUI JelloStatsFrozenUITxt;
-	Text HappyTxt = "Happy";
-	Text LonelyTxt = "Lonely";
-	Text FrozenTxt = "Frozen! Plz help!";
-	Text ToastyTxt = "Toasty warm";
-	Text GettingColdTxt = "Getting cold";
-	Text WarmingUpTxt = "Warming up!";
+
+	string HappyTxt = "Happy";
+	string LonelyTxt = "Lonely";
+	string FrozenTxt = "Frozen! Plz help!";
+	string ToastyTxt = "Toasty warm";
+	string GettingColdTxt = "Getting cold";
+	string WarmingUpTxt = "Warming up!";
 
 
 	public GameObject SpriteMask;
@@ -157,13 +154,12 @@ public class Jello : MonoBehaviour
 
 				if (distance <= 1.25f) {
 					IsNextToOther = true;
-//					HappyorLonelyTxt.text = "Happy";
 
-					JelloStatsHappyUITxt.SetJelloLonelyText(HappyTxt.ToString());
+					CurrentUIFace.SetJelloLonelyText(HappyTxt);
 				} else {
 					IsNextToOther = false;
-//					HappyorLonelyTxt.text = "Lonely";
-					JelloStatsHappyUITxt.SetJelloLonelyText(LonelyTxt.ToString());
+
+					CurrentUIFace.SetJelloLonelyText(LonelyTxt);
 				}				
 			}
 		}
@@ -173,11 +169,12 @@ public class Jello : MonoBehaviour
 
 		if (IsNextToFire == false && IsNextToOther == false) {
 			tempDelta = -0.03f;
-			JelloStatsFrozenUITxt.SetJelloFrozenText(GettingColdTxt.ToString());
+
+			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
-//				ToastyOrFrozenTxt.text = "FROZEN! Plz help me!";
-				JelloStatsFrozenUITxt.SetJelloFrozenText(FrozenTxt.ToString());
+
+				CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 				MyTemp = 0;
 			}
 		}
@@ -186,10 +183,9 @@ public class Jello : MonoBehaviour
 			AmIFrozen = false;
 			tempDelta = 0.05f;
 			maxTemp = 11f;
-//			ToastyOrFrozenTxt.text = "Toasty warm";
-//			HappyorLonelyTxt.text = "Happy";
-			JelloStatsFrozenUITxt.SetJelloFrozenText(ToastyTxt.ToString());
-			JelloStatsHappyUITxt.SetJelloLonelyText (HappyTxt.ToString());
+
+			CurrentUIFace.SetJelloFrozenText(ToastyTxt);
+			CurrentUIFace.SetJelloLonelyText (HappyTxt);
 		}
 
 		if (IsNextToFire == true && IsNextToOther == false) {
@@ -197,14 +193,14 @@ public class Jello : MonoBehaviour
 			AmIToasty = false;
 			maxTemp = 10f;
 			tempDelta = 0.03f;
-			JelloStatsFrozenUITxt.SetJelloFrozenText(WarmingUpTxt.ToString());
+			CurrentUIFace.SetJelloFrozenText(WarmingUpTxt);
 		}
 
 		if (IsNextToFire == false && IsNextToOther == true) {
 			AmIFrozen = false;
 			AmIToasty = false;
 			tempDelta = 0.02f;
-			JelloStatsFrozenUITxt.SetJelloFrozenText(WarmingUpTxt.ToString());
+			CurrentUIFace.SetJelloFrozenText(WarmingUpTxt);
 		}
 
 		MyTemp = MyTemp + tempDelta * Time.deltaTime;

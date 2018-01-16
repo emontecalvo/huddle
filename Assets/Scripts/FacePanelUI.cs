@@ -21,11 +21,11 @@ public class FacePanelUI : MonoBehaviour {
 		FaceImage.sprite = faceSprite;
 	}
 
-	public void SetJelloLonelyText (Text happyOrLonely) {
-		HappyorLonelyTxt.text = happyOrLonely.ToString();
+	public void SetJelloLonelyText (string happyOrLonely) {
+		HappyorLonelyTxt.text = happyOrLonely;
 	}
 
-	public void SetJelloFrozenText (Text frozenOrNot) {
-		FrozenOrToastyTxt.text = frozenOrNot.ToString();
+	public void SetJelloFrozenText (string frozenOrNot) {
+		FrozenOrToastyTxt.text = frozenOrNot;
 	}
 }
