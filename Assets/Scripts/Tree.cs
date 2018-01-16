@@ -9,7 +9,6 @@ public class Tree : MonoBehaviour {
 	public GameObject TreeView;
 	public GameObject WoodView;
 
-	// Use this for initialization
 	void Start () {
 
 		TreeMgr.inst.Register(this);
@@ -23,8 +22,7 @@ public class Tree : MonoBehaviour {
 		}
 
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
 
 	}

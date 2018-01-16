@@ -9,12 +9,10 @@ public class FacePanelUI : MonoBehaviour {
 	public Text HappyorLonelyTxt;
 	public Text FrozenOrToastyTxt;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
