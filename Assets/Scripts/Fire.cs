@@ -13,6 +13,7 @@ public class Fire : MonoBehaviour
 	public float TimeUntilNextFrame;
 	public float TimeBetweenFrames;
 	public int CurrentLevel;
+	public ParticleSystem WoodAddToFireParticle;
 
 	private static Fire _inst = null;
 
@@ -73,5 +74,9 @@ public class Fire : MonoBehaviour
 
 	public void ReceiveWood(Tree tree) {
 		Destroy (tree.gameObject);
+
+		WoodAddToFireParticle.Clear ();
+		WoodAddToFireParticle.Stop();
+		WoodAddToFireParticle.Play();
 	}
 }
