@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Fire.cs" />
      <Compile Include="Assets\Scripts\Jello.cs" />
      <Compile Include="Assets\Scripts\JelloMgr.cs" />
+     <Compile Include="Assets\Scripts\Thermometer.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\TreeMgr.cs" />
  <Reference Include="UnityEngine.UI">

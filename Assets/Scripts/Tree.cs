@@ -18,7 +18,10 @@ public class Tree : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-		TreeMgr.inst.Unregister (this);
+		if (TreeMgr.inst != null) {
+			TreeMgr.inst.Unregister (this);
+		}
+
 	}
 
 	// Update is called once per frame
