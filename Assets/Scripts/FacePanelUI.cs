@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class FacePanelUI : MonoBehaviour {
 
 	public Image FaceImage;
+	public Text HappyorLonelyTxt;
+	public Text FrozenOrToastyTxt;
 
 	// Use this for initialization
 	void Start () {
@@ -19,5 +21,13 @@ public class FacePanelUI : MonoBehaviour {
 
 	public void SetFace(Sprite faceSprite) {
 		FaceImage.sprite = faceSprite;
+	}
+
+	public void SetJelloLonelyText (Text happyOrLonely) {
+		HappyorLonelyTxt.text = happyOrLonely.ToString();
+	}
+
+	public void SetJelloFrozenText (Text frozenOrNot) {
+		FrozenOrToastyTxt.text = frozenOrNot.ToString();
 	}
 }

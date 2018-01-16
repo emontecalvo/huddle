@@ -1210,8 +1210,18 @@ Prefab:
       objectReference: {fileID: 1603180265}
     - target: {fileID: 1379618675216452, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114087264630365976, guid: 4f5e66371a0054f3abd6d77a728e1015,
+        type: 2}
+      propertyPath: HappyorLonelyTxt
+      value: 
+      objectReference: {fileID: 952974904}
+    - target: {fileID: 114087264630365976, guid: 4f5e66371a0054f3abd6d77a728e1015,
+        type: 2}
+      propertyPath: FrozenOrToastyTxt
+      value: 
+      objectReference: {fileID: 1691558581}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
   m_IsPrefabParent: 0
@@ -1709,7 +1719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &839488555
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5567,7 +5577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1112234138
 RectTransform:
   m_ObjectHideFlags: 0

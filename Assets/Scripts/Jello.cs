@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Jello : MonoBehaviour
 {
@@ -25,8 +26,19 @@ public class Jello : MonoBehaviour
 	public Sprite TopEyes;
 	public Sprite RightEyes;
 	public Sprite DownEyes;
+//	public Text HappyorLonelyTxt;
+//	public Text ToastyOrFrozenTxt;
 
 	public FacePanelUI CurrentUIFace;
+	public FacePanelUI JelloStatsHappyUITxt;
+	public FacePanelUI JelloStatsFrozenUITxt;
+	Text HappyTxt = "Happy";
+	Text LonelyTxt = "Lonely";
+	Text FrozenTxt = "Frozen! Plz help!";
+	Text ToastyTxt = "Toasty warm";
+	Text GettingColdTxt = "Getting cold";
+	Text WarmingUpTxt = "Warming up!";
+
 
 	public GameObject SpriteMask;
 
@@ -145,16 +157,27 @@ public class Jello : MonoBehaviour
 
 				if (distance <= 1.25f) {
 					IsNextToOther = true;
+//					HappyorLonelyTxt.text = "Happy";
+
+					JelloStatsHappyUITxt.SetJelloLonelyText(HappyTxt.ToString());
 				} else {
 					IsNextToOther = false;
+//					HappyorLonelyTxt.text = "Lonely";
+					JelloStatsHappyUITxt.SetJelloLonelyText(LonelyTxt.ToString());
 				}				
 			}
 		}
 
+
+
+
 		if (IsNextToFire == false && IsNextToOther == false) {
 			tempDelta = -0.03f;
+			JelloStatsFrozenUITxt.SetJelloFrozenText(GettingColdTxt.ToString());
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
+//				ToastyOrFrozenTxt.text = "FROZEN! Plz help me!";
+				JelloStatsFrozenUITxt.SetJelloFrozenText(FrozenTxt.ToString());
 				MyTemp = 0;
 			}
 		}
@@ -163,6 +186,10 @@ public class Jello : MonoBehaviour
 			AmIFrozen = false;
 			tempDelta = 0.05f;
 			maxTemp = 11f;
+//			ToastyOrFrozenTxt.text = "Toasty warm";
+//			HappyorLonelyTxt.text = "Happy";
+			JelloStatsFrozenUITxt.SetJelloFrozenText(ToastyTxt.ToString());
+			JelloStatsHappyUITxt.SetJelloLonelyText (HappyTxt.ToString());
 		}
 
 		if (IsNextToFire == true && IsNextToOther == false) {
@@ -170,13 +197,14 @@ public class Jello : MonoBehaviour
 			AmIToasty = false;
 			maxTemp = 10f;
 			tempDelta = 0.03f;
+			JelloStatsFrozenUITxt.SetJelloFrozenText(WarmingUpTxt.ToString());
 		}
 
 		if (IsNextToFire == false && IsNextToOther == true) {
 			AmIFrozen = false;
 			AmIToasty = false;
 			tempDelta = 0.02f;
-
+			JelloStatsFrozenUITxt.SetJelloFrozenText(WarmingUpTxt.ToString());
 		}
 
 		MyTemp = MyTemp + tempDelta * Time.deltaTime;
