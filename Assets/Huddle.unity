@@ -798,7 +798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &389677272
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -910,7 +910,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 176011153
+  randomSeed: 897670332
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4977,7 +4977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &849999905
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -5089,7 +5089,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -617453397
+  randomSeed: 1195464222
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9442,7 +9442,7 @@ Prefab:
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
@@ -9452,7 +9452,7 @@ Prefab:
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
@@ -10190,7 +10190,7 @@ Prefab:
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
@@ -10200,7 +10200,7 @@ Prefab:
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 224536801204070192, guid: 40a156e77fd7d446ca67ec786ca5dc84,
         type: 2}
@@ -10333,3 +10333,5 @@ MonoBehaviour:
   StormTwoStartTime: 15
   StormTwoEndTime: 20
   LastTime: 0
+  StormOneParticle: {fileID: 389677273}
+  MainParticle: {fileID: 849999906}

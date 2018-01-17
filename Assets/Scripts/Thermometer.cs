@@ -26,6 +26,11 @@ public class Thermometer : MonoBehaviour {
 	public float StormTwoEndTime;
 	public float LastTime;
 
+	public ParticleSystem StormOneParticle;
+	public ParticleSystem MainParticle;
+
+
+
 	void Start () {
 		
 	}
@@ -42,18 +47,27 @@ public class Thermometer : MonoBehaviour {
 		float time = Time.time;
 		if (time > StormOneStartTime && LastTime < StormOneStartTime) {
 			BeginStorm ();
+			MainParticle.gameObject.SetActive (false);
+			StormOneParticle.gameObject.SetActive (true);
+
 		}
 			
 		if (time > StormOneEndTime && LastTime < StormOneEndTime) {
 			EndStorm ();
+			MainParticle.gameObject.SetActive (true);
+			StormOneParticle.gameObject.SetActive (false);
 		}
 
 		if (time > StormTwoStartTime && LastTime < StormTwoStartTime) {
 			BeginStorm ();
+			MainParticle.gameObject.SetActive (false);
+			StormOneParticle.gameObject.SetActive (true);
 		}
 
 		if (time > StormTwoEndTime && LastTime < StormTwoEndTime) {
 			EndStorm ();
+			MainParticle.gameObject.SetActive (false);
+			StormOneParticle.gameObject.SetActive (true);
 		}
 
 		LastTime = time;
