@@ -9,12 +9,37 @@ public class FacePanelUI : MonoBehaviour {
 	public Text HappyorLonelyTxt;
 	public Text FrozenOrToastyTxt;
 
+	public GameObject StatPanelOne;
+	public GameObject StatPanelTwo;
+	float NextPanelSwitchTime = 5.0f;
+	float period = 0.1f;
+
+
+
 	void Start () {
-		
+		StatPanelOne.SetActive (true);
+		StatPanelTwo.SetActive (false);
 	}
 
 	void Update () {
-		
+		SwitchUIJelloPanel ();
+	}
+
+	void SwitchUIJelloPanel() {
+		if (Time.time > NextPanelSwitchTime) {
+			if (StatPanelOne.activeSelf) {
+				StatPanelOne.SetActive (false);
+				StatPanelTwo.SetActive (true);
+				NextPanelSwitchTime += 5.0f;
+				Debug.Log (Time.time);
+				Debug.Log (NextPanelSwitchTime);
+			} else {
+				Debug.Log ("HERE!");
+				StatPanelOne.SetActive (true);
+				StatPanelTwo.SetActive (false);
+				NextPanelSwitchTime += 5.0f;
+			}
+		}
 	}
 
 	public void SetFace(Sprite faceSprite) {
