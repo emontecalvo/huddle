@@ -147,23 +147,23 @@ public class Jello : MonoBehaviour
 			IsNextToFire = false;
 		}
 
+		IsNextToOther = false;
+
 		foreach (Jello jello in JelloMgr.inst.AllJellos) {
 			if (jello != this) {
 				Vector3 toJello = jello.transform.position - transform.position;
 				float distance = toJello.magnitude;
-
-				if (distance <= 1.25f) {
+				if (distance <= 2.25f) {
 					IsNextToOther = true;
-
-					CurrentUIFace.SetJelloLonelyText(HappyTxt);
-				} else {
-					IsNextToOther = false;
-
-					CurrentUIFace.SetJelloLonelyText(LonelyTxt);
-				}				
+				}
 			}
 		}
 
+		if (!IsNextToOther) {
+			CurrentUIFace.SetJelloLonelyText (LonelyTxt);
+		} else {
+			CurrentUIFace.SetJelloLonelyText(HappyTxt);
+		}
 
 
 

@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 19775071}
   - component: {fileID: 19775073}
   - component: {fileID: 19775072}
+  - component: {fileID: 19775074}
   m_Layer: 5
   m_Name: Jello1
   m_TagString: Untagged
@@ -185,6 +186,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 19775070}
+--- !u!114 &19775074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19775070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085006cf35ba64122832c7aafa51d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FaceImage: {fileID: 1603180265}
+  HappyorLonelyTxt: {fileID: 952974904}
+  FrozenOrToastyTxt: {fileID: 1691558581}
+  StatPanelOne: {fileID: 948989927}
+  StatPanelTwo: {fileID: 839488554}
 --- !u!1001 &41701908
 Prefab:
   m_ObjectHideFlags: 0
@@ -1011,9 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40b5c69e9ba74000b88b3403d5d7ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllJellos:
-  - {fileID: 2141345092}
-  - {fileID: 613344485}
+  AllJellos: []
 --- !u!4 &417304962
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,12 +1228,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4983381209518368, guid: 9559aad9b66ff461caf29227331bcba0,
     type: 2}
   m_PrefabInternal: {fileID: 674218797}
---- !u!114 &613344485 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114721839247374278, guid: 5d2def035b8424ec0b7f88ae677ddcd8,
-    type: 2}
-  m_PrefabInternal: {fileID: 829948452}
-  m_Script: {fileID: 11500000, guid: 53edcdd2280f44620910b9512fbc231b, type: 3}
 --- !u!4 &619101835 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4983381209518368, guid: 9559aad9b66ff461caf29227331bcba0,
@@ -1365,7 +1374,8 @@ Prefab:
       propertyPath: StatPanelTwo
       value: 
       objectReference: {fileID: 839488554}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114087264630365976, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &674218797
@@ -1904,7 +1914,7 @@ Prefab:
         type: 2}
       propertyPath: CurrentUIFace
       value: 
-      objectReference: {fileID: 893505856}
+      objectReference: {fileID: 19775074}
     - target: {fileID: 1285303639584854, guid: 5d2def035b8424ec0b7f88ae677ddcd8, type: 2}
       propertyPath: m_Name
       value: Jello (1)
@@ -5352,12 +5362,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224547917913578764, guid: 4f5e66371a0054f3abd6d77a728e1015,
     type: 2}
   m_PrefabInternal: {fileID: 644741389}
---- !u!114 &893505856 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114087264630365976, guid: 4f5e66371a0054f3abd6d77a728e1015,
-    type: 2}
-  m_PrefabInternal: {fileID: 644741389}
-  m_Script: {fileID: 11500000, guid: 085006cf35ba64122832c7aafa51d177, type: 3}
 --- !u!1 &913888751
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,7 +6230,8 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114087264630365976, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4f5e66371a0054f3abd6d77a728e1015, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1289063412 stripped
@@ -6519,7 +6524,7 @@ Prefab:
         type: 2}
       propertyPath: CurrentUIFace
       value: 
-      objectReference: {fileID: 893505856}
+      objectReference: {fileID: 19775074}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d2def035b8424ec0b7f88ae677ddcd8, type: 2}
   m_IsPrefabParent: 0
@@ -7868,9 +7873,3 @@ MonoBehaviour:
   ThermoFillImg: {fileID: 1285090684}
   fillAmount: 0
   randomFill: 0
---- !u!114 &2141345092 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114721839247374278, guid: 5d2def035b8424ec0b7f88ae677ddcd8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1481181499}
-  m_Script: {fileID: 11500000, guid: 53edcdd2280f44620910b9512fbc231b, type: 3}

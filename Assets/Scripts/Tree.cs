@@ -24,6 +24,10 @@ public class Tree : MonoBehaviour {
 	}
 		
 	void Update () {
+		// make trees at top appear smaller:
+		float heightRatio = (transform.position.z - -10) / (10 - -10);
+		float scale = 1.2f - heightRatio * 0.4f;
+		transform.localScale = new Vector3 (scale, scale, scale);
 
 	}
 

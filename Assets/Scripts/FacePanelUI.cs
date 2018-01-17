@@ -31,10 +31,7 @@ public class FacePanelUI : MonoBehaviour {
 				StatPanelOne.SetActive (false);
 				StatPanelTwo.SetActive (true);
 				NextPanelSwitchTime += 5.0f;
-				Debug.Log (Time.time);
-				Debug.Log (NextPanelSwitchTime);
 			} else {
-				Debug.Log ("HERE!");
 				StatPanelOne.SetActive (true);
 				StatPanelTwo.SetActive (false);
 				NextPanelSwitchTime += 5.0f;

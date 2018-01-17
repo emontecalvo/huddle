@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FacePanelUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tree.cs">
     <Files>
-      <File FileName="Assets/Scripts/Jello.cs" Line="41" Column="2" />
-      <File FileName="Assets/Scripts/Fire.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Jello.cs" Line="155" Column="40" />
+      <File FileName="Assets/Scripts/Fire.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/JelloMgr.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TreeMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Tree.cs" Line="25" Column="3" />
-      <File FileName="Assets/Scripts/FacePanelUI.cs" Line="32" Column="35" />
-      <File FileName="Assets/Scripts/Thermometer.cs" Line="29" Column="44" />
+      <File FileName="Assets/Scripts/Tree.cs" Line="31" Column="3" />
+      <File FileName="Assets/Scripts/FacePanelUI.cs" Line="34" Column="12" />
+      <File FileName="Assets/Scripts/Thermometer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
