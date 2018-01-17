@@ -332,6 +332,11 @@ Prefab:
       propertyPath: NextPanelSwitchTime
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 224442620280031236, guid: df7768c4186494420a884509749b0cb6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 13.957505
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df7768c4186494420a884509749b0cb6, type: 2}
   m_IsPrefabParent: 0
@@ -4977,7 +4982,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -11368,6 +11373,9 @@ MonoBehaviour:
   FaceImage: {fileID: 378037755}
   HappyorLonelyTxt: {fileID: 737960904}
   FrozenOrToastyTxt: {fileID: 469587896}
+  Snowflake1: {fileID: 41770471}
+  Snowflake2: {fileID: 1341473804}
+  Snowflake3: {fileID: 175309018}
   StatPanelOne: {fileID: 577074687}
   StatPanelTwo: {fileID: 44292087}
   NextPanelSwitchTime: 5

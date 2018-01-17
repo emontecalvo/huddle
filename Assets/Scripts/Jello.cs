@@ -168,13 +168,14 @@ public class Jello : MonoBehaviour
 
 
 		if (IsNextToFire == false && IsNextToOther == false) {
-			tempDelta = -0.03f;
+//			tempDelta = -0.03f;    testing speed below:
+			tempDelta = -1f;
 
 			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
 
-				CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
+				CurrentUIFace.SetJelloFrozenText(FrozenTxt);
 				MyTemp = 0;
 			}
 		}

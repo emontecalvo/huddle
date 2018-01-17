@@ -75,11 +75,11 @@ public class Thermometer : MonoBehaviour {
 	}
 
 	void BeginStorm() {
-		Debug.Log ("BEGIN STORM!");
+//		Debug.Log ("BEGIN STORM!");
 
 	}
 
 	void EndStorm () {
-		Debug.Log ("You survived, end of storm");
+//		Debug.Log ("You survived, end of storm");
 	}
 }

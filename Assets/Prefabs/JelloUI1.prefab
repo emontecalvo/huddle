@@ -576,7 +576,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -629,6 +629,9 @@ MonoBehaviour:
   FaceImage: {fileID: 114143522132229522}
   HappyorLonelyTxt: {fileID: 114829251616059066}
   FrozenOrToastyTxt: {fileID: 114365442457109684}
+  Snowflake1: {fileID: 1319427018003814}
+  Snowflake2: {fileID: 1031752471124242}
+  Snowflake3: {fileID: 1005292786243192}
   StatPanelOne: {fileID: 1117319842250504}
   StatPanelTwo: {fileID: 1220670198282034}
   NextPanelSwitchTime: 0
@@ -1247,7 +1250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.455, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.957506, y: 0}
+  m_AnchoredPosition: {x: 13.957505, y: 0}
   m_SizeDelta: {x: 27.914986, y: 35.5}
   m_Pivot: {x: 0.5000005, y: 0.5}
 --- !u!224 &224478528909256270
