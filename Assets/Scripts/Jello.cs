@@ -27,6 +27,9 @@ public class Jello : MonoBehaviour
 	public Sprite RightEyes;
 	public Sprite DownEyes;
 
+	public GameObject JelloFaceFlake;
+	public GameObject JelloAboveFlake;
+
 	public FacePanelUI CurrentUIFace;
 
 	string HappyTxt = "Happy";
@@ -42,6 +45,8 @@ public class Jello : MonoBehaviour
 	void Start ()
 	{
 		JelloMgr.inst.Register (this);
+		JelloFaceFlake.SetActive(false);
+		JelloAboveFlake.SetActive(false);
 	}
 
 	void Update ()
@@ -174,6 +179,8 @@ public class Jello : MonoBehaviour
 			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
+				JelloFaceFlake.SetActive(true);
+				JelloAboveFlake.SetActive(true);
 
 				CurrentUIFace.SetJelloFrozenText(FrozenTxt);
 				MyTemp = 0;
