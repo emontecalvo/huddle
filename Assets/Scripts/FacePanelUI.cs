@@ -11,8 +11,8 @@ public class FacePanelUI : MonoBehaviour {
 
 	public GameObject StatPanelOne;
 	public GameObject StatPanelTwo;
-	float NextPanelSwitchTime = 5.0f;
-	float period = 0.1f;
+	public float NextPanelSwitchTime = 5.0f;
+	public float period = 0.1f;
 
 
 
@@ -34,7 +34,7 @@ public class FacePanelUI : MonoBehaviour {
 			} else {
 				StatPanelOne.SetActive (true);
 				StatPanelTwo.SetActive (false);
-				NextPanelSwitchTime += 5.0f;
+				NextPanelSwitchTime += 5.0f * 3.0f;
 			}
 		}
 	}
