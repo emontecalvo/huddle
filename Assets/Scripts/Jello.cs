@@ -179,12 +179,18 @@ public class Jello : MonoBehaviour
 			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
-				JelloFaceFlake.SetActive(true);
-				JelloAboveFlake.SetActive(true);
+				JelloFaceFlake.SetActive (true);
+				JelloAboveFlake.SetActive (true);
 
-				CurrentUIFace.SetJelloFrozenText(FrozenTxt);
+				CurrentUIFace.SetJelloFrozenText (FrozenTxt);
 				MyTemp = 0;
 			}
+				
+		}
+
+		if (MyTemp > 0) {
+			JelloFaceFlake.SetActive (false);
+			JelloAboveFlake.SetActive (false);
 		}
 
 		if (IsNextToFire == true && IsNextToOther == true) {
