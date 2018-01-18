@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tree : MonoBehaviour {
 
 	bool AmIChopped = false;
+	bool IsItAStorm = false;
 
 	public GameObject TreeView;
 	public GameObject WoodView;
@@ -49,27 +50,28 @@ public class Tree : MonoBehaviour {
 	}
 
 	void SwitchTreePanels() {
-		// if there is a storm....
-		if (!WoodView.activeSelf) {
-			if (Time.time > NextPanelSwitchTimeTree) {
-				if (TreeView.activeSelf) {
-					TreeView.SetActive (false);
-					TreeBend1.SetActive (true);
-					NextPanelSwitchTimeTree += 0.5f;
-				} else if (TreeBend1.activeSelf) {
-					TreeBend1.SetActive (false);
-					TreeBend2.SetActive (true);
-					NextPanelSwitchTimeTree += 0.5f;
-				} else if (TreeBend2.activeSelf) {
-					TreeBend2.SetActive (false);
-					TreeBend3.SetActive (false);
-					NextPanelSwitchTimeTree += 0.5f;
-				} else if (TreeBend3.activeSelf) {
-					TreeBend3.SetActive (false);
-					TreeView.SetActive (true);
-					NextPanelSwitchTimeTree += 0.5f;
+		if (IsItAStorm) {
+			if (!WoodView.activeSelf) {
+				if (Time.time > NextPanelSwitchTimeTree) {
+					if (TreeView.activeSelf) {
+						TreeView.SetActive (false);
+						TreeBend1.SetActive (true);
+						NextPanelSwitchTimeTree += 0.5f;
+					} else if (TreeBend1.activeSelf) {
+						TreeBend1.SetActive (false);
+						TreeBend2.SetActive (true);
+						NextPanelSwitchTimeTree += 0.5f;
+					} else if (TreeBend2.activeSelf) {
+						TreeBend2.SetActive (false);
+						TreeBend3.SetActive (false);
+						NextPanelSwitchTimeTree += 0.5f;
+					} else if (TreeBend3.activeSelf) {
+						TreeBend3.SetActive (false);
+						TreeView.SetActive (true);
+						NextPanelSwitchTimeTree += 0.5f;
+					}
 				}
-			}
+			}		
 		}
 
 		if (!WoodView.activeSelf && !TreeBend1.activeSelf && !TreeBend2.activeSelf && !TreeBend3.activeSelf) {
@@ -78,18 +80,12 @@ public class Tree : MonoBehaviour {
 
 	}
 
+	public void StormForTrees() {
+		IsItAStorm = true;
+	}
 
-//	void SwitchUIJelloPanel() {
-//		if (Time.time > NextPanelSwitchTime) {
-//			if (StatPanelOne.activeSelf) {
-//				StatPanelOne.SetActive (false);
-//				StatPanelTwo.SetActive (true);
-//				NextPanelSwitchTime += 5.0f;
-//			} else {
-//				StatPanelOne.SetActive (true);
-//				StatPanelTwo.SetActive (false);
-//				NextPanelSwitchTime += 5.0f * 3.0f;
-//			}
-//		}
-//	}
+	public void StopStormForTrees() {
+		IsItAStorm = false;
+	}
+
 }

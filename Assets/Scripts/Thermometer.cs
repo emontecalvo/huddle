@@ -49,25 +49,29 @@ public class Thermometer : MonoBehaviour {
 			BeginStorm ();
 			MainParticle.gameObject.SetActive (false);
 			StormOneParticle.gameObject.SetActive (true);
-
+			StormForTrees ();
+			Tree.StormForTrees ();
 		}
 			
 		if (time > StormOneEndTime && LastTime < StormOneEndTime) {
 			EndStorm ();
 			MainParticle.gameObject.SetActive (true);
 			StormOneParticle.gameObject.SetActive (false);
+			Tree.StopStormForTrees ();
 		}
 
 		if (time > StormTwoStartTime && LastTime < StormTwoStartTime) {
 			BeginStorm ();
 			MainParticle.gameObject.SetActive (false);
 			StormOneParticle.gameObject.SetActive (true);
+			Tree.StormForTrees ();
 		}
 
 		if (time > StormTwoEndTime && LastTime < StormTwoEndTime) {
 			EndStorm ();
 			MainParticle.gameObject.SetActive (false);
 			StormOneParticle.gameObject.SetActive (true);
+			Tree.StopStormForTrees ();
 		}
 
 		LastTime = time;
