@@ -13,7 +13,7 @@ public class Tree : MonoBehaviour {
 	public GameObject TreeBend1;
 	public GameObject TreeBend2;
 	public GameObject TreeBend3;
-	public float NextPanelSwitchTimeTree = 0.5f;
+	public float NextPanelSwitchTimeTree;
 
 	void Start () {
 
@@ -25,7 +25,7 @@ public class Tree : MonoBehaviour {
 		TreeBend2.SetActive (false);
 		TreeBend3.SetActive (false);
 
-		NextPanelSwitchTimeTree = UnityEngine.Random.Range (0f, 1f);
+		NextPanelSwitchTimeTree = -1;
 	}
 
 	void OnDestroy() {
@@ -57,7 +57,10 @@ public class Tree : MonoBehaviour {
 	void SwitchTreePanels() {
 		if (Thermometer.inst.IsItAStorm) {
 			if (!AmIChopped) {
-				while (Time.time > NextPanelSwitchTimeTree) {
+				if (NextPanelSwitchTimeTree < 0) {
+					NextPanelSwitchTimeTree = Time.time + UnityEngine.Random.Range (0f, 1f);
+				}
+				if (Time.time > NextPanelSwitchTimeTree) {
 					if (TreeView.activeSelf) {
 						TreeView.SetActive (false);
 						TreeBend1.SetActive (true);
@@ -77,7 +80,10 @@ public class Tree : MonoBehaviour {
 					}
 				}
 			}		
+		} else {
+			NextPanelSwitchTimeTree = -1;
 		}
+			
 
 		if (!WoodView.activeSelf && !TreeBend1.activeSelf && !TreeBend2.activeSelf && !TreeBend3.activeSelf) {
 			TreeView.SetActive (true);
