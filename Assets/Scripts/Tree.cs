@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Tree : MonoBehaviour {
 
@@ -13,9 +14,13 @@ public class Tree : MonoBehaviour {
 	public GameObject TreeBend1;
 	public GameObject TreeBend2;
 	public GameObject TreeBend3;
+	public GameObject PalmTree;
 	public float NextPanelSwitchTimeTree;
 
+	public float TurnIntoPalmTreeTime;
+
 	void Start () {
+		TurnIntoPalmTreeTime = Random.Range (0f, 1f);
 
 		TreeMgr.inst.Register(this);
 		TreeView.SetActive (true);
@@ -24,6 +29,7 @@ public class Tree : MonoBehaviour {
 		TreeBend1.SetActive (false);
 		TreeBend2.SetActive (false);
 		TreeBend3.SetActive (false);
+		PalmTree.SetActive(false);
 
 		NextPanelSwitchTimeTree = -1;
 	}
@@ -34,14 +40,35 @@ public class Tree : MonoBehaviour {
 		}
 
 	}
-		
+
+	float TimeLast = 0;
+
 	void Update () {
+		float time = GamePhaseMgr.inst.GetGameTime ();
 		// make trees at top appear smaller:
 		float heightRatio = (transform.position.z - -10) / (10 - -10);
 		float scale = 1.2f - heightRatio * 0.4f;
 		transform.localScale = new Vector3 (scale, scale, scale);
-		SwitchTreePanels ();
+		if (GamePhaseMgr.inst.IsGame) {
+			SwitchTreePanels ();
+		}
 
+
+
+		if (GamePhaseMgr.inst.IsExtro && time > TurnIntoPalmTreeTime && TimeLast < TurnIntoPalmTreeTime) {
+			PalmTree.SetActive(true);
+			PalmTree.transform.localScale = new Vector3 (0f, 2f, 1f);
+			Sequence sequence = DOTween.Sequence ();
+			sequence.Append(TreeView.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Append (PalmTree.transform.DOScale (new Vector3 (1f, 1f, 1f), 0.2f));
+//			TreeView.SetActive (false);
+//			WoodView.SetActive (false);
+//			TreeBend1.SetActive (false);
+//			TreeBend2.SetActive (false);
+//			TreeBend3.SetActive (false);
+
+		}
+		TimeLast = time;
 	}
 
 	public void GetChopped() {
