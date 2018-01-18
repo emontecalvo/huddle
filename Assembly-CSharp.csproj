@@ -53,8 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\Scripts\ExtroMgr.cs" />
      <Compile Include="Assets\Scripts\FacePanelUI.cs" />
      <Compile Include="Assets\Scripts\Fire.cs" />
+     <Compile Include="Assets\Scripts\GamePhaseMgr.cs" />
+     <Compile Include="Assets\Scripts\IntroMgr.cs" />
      <Compile Include="Assets\Scripts\Jello.cs" />
      <Compile Include="Assets\Scripts\JelloMgr.cs" />
      <Compile Include="Assets\Scripts\Thermometer.cs" />

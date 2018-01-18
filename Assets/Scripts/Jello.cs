@@ -49,14 +49,16 @@ public class Jello : MonoBehaviour
 		JelloAboveFlake.SetActive(false);
 	}
 
-	void Update ()
+	void Update () 
 	{
-		MovementLogic ();
-		ChopTrees ();
-		TemperatureLogic ();
+		if (GamePhaseMgr.inst.IsGame) {
+			MovementLogic ();
+			ChopTrees ();
+			TemperatureLogic ();
 
-		if (BeingHauled != null) {
-			HaulTrees ();
+			if (BeingHauled != null) {
+				HaulTrees ();
+			}		
 		}
 	}
 

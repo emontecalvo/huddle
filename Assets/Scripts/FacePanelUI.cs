@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class FacePanelUI : MonoBehaviour {
 
@@ -16,12 +17,13 @@ public class FacePanelUI : MonoBehaviour {
 	public GameObject StatPanelTwo;
 	public float NextPanelSwitchTime = 5.0f;
 	public float period = 0.1f;
-
+	bool IsFlipped = false;
 
 
 	void Start () {
 		StatPanelOne.SetActive (true);
-		StatPanelTwo.SetActive (false);
+		StatPanelTwo.SetActive (true);
+		StatPanelTwo.transform.localScale = new Vector3 (0, 1, 1);
 
 		Snowflake1.SetActive(false);
 		Snowflake2.SetActive(false);
@@ -34,14 +36,23 @@ public class FacePanelUI : MonoBehaviour {
 
 	void SwitchUIJelloPanel() {
 		if (Time.time > NextPanelSwitchTime) {
-			if (StatPanelOne.activeSelf) {
-				StatPanelOne.SetActive (false);
-				StatPanelTwo.SetActive (true);
+			Sequence sequence = DOTween.Sequence ();
+			RectTransform RT1 = (RectTransform) StatPanelOne.transform;
+			RectTransform RT2 = (RectTransform) StatPanelTwo.transform;
+			if (!IsFlipped) {
+				sequence.Append(RT1.DOScaleX(0, 0.1f));
+				sequence.Append(RT2.DOScaleX(1, 0.1f));
+//				StatPanelOne.SetActive (false);
+//				StatPanelTwo.SetActive (true);
 				NextPanelSwitchTime += 5.0f;
+				IsFlipped = true;
 			} else {
-				StatPanelOne.SetActive (true);
-				StatPanelTwo.SetActive (false);
+//				StatPanelOne.SetActive (true);
+//				StatPanelTwo.SetActive (false);
+				sequence.Append(RT2.DOScaleX(0, 0.1f));
+				sequence.Append(RT1.DOScaleX(1, 0.1f));
 				NextPanelSwitchTime += 5.0f * 3.0f;
+				IsFlipped = false;
 			}
 		}
 	}

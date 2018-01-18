@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class Thermometer : MonoBehaviour {
+public class Thermometer : MonoBehaviour
+{
 
 	private static Thermometer _inst = null;
 
@@ -35,14 +36,21 @@ public class Thermometer : MonoBehaviour {
 
 	public float TotalFill;
 
-	void Start () {
+	void Start ()
+	{
 		
 	}
 
-	void Update () {
+	void Update ()
+	{
+		if (!GamePhaseMgr.inst.IsGame) {
+			return;
+		}
+
+		float time = GamePhaseMgr.inst.GetGameTime ();
 		if (!IsItAStorm) {
 			fillAmount = 0.1f;
-			randomFill = Mathf.Cos (Time.time) * 0.05f;
+			randomFill = Mathf.Cos (time) * 0.05f;
 			TotalFill = fillAmount + randomFill;
 
 			//		Debug.Log ("Time dot time:" + Time.time.ToString () + "Time delta:" + Time.deltaTime.ToString ());		
@@ -56,7 +64,7 @@ public class Thermometer : MonoBehaviour {
 		ThermoFillImg.fillAmount = TotalFill;
 
 
-		float time = Time.time;
+
 		if (time > StormOneStartTime && LastTime < StormOneStartTime) {
 			BeginStorm ();
 			MainParticle.gameObject.SetActive (false);
@@ -85,14 +93,16 @@ public class Thermometer : MonoBehaviour {
 
 	}
 
-	void BeginStorm() {
+	void BeginStorm ()
+	{
 //		Debug.Log ("BEGIN STORM!");
 		IsItAStorm = true;
 		ThermoIceFill.gameObject.SetActive (true);
 		ThermoIceFill.DOFillAmount (1f, 1f);
 	}
 
-	void EndStorm () {
+	void EndStorm ()
+	{
 //		Debug.Log ("You survived, end of storm");
 		IsItAStorm = false;
 		ThermoIceFill.DOFillAmount (0f, 1f).OnComplete (() => {
