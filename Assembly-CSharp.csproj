@@ -88,11 +88,11 @@
  <Reference Include="DOTween">
  <HintPath>/Users/andromeda/UnityProjects/Huddle/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="DOTween50">
- <HintPath>/Users/andromeda/UnityProjects/Huddle/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
- </Reference>
  <Reference Include="DOTween43">
  <HintPath>/Users/andromeda/UnityProjects/Huddle/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/andromeda/UnityProjects/Huddle/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
  <HintPath>/Users/andromeda/UnityProjects/Huddle/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>

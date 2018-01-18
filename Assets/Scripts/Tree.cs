@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tree : MonoBehaviour {
 
 	bool AmIChopped = false;
-	bool IsItAStorm = false;
+
 
 	public GameObject TreeView;
 	public GameObject WoodView;
@@ -24,6 +24,8 @@ public class Tree : MonoBehaviour {
 		TreeBend1.SetActive (false);
 		TreeBend2.SetActive (false);
 		TreeBend3.SetActive (false);
+
+		NextPanelSwitchTimeTree = UnityEngine.Random.Range (0f, 1f);
 	}
 
 	void OnDestroy() {
@@ -46,13 +48,16 @@ public class Tree : MonoBehaviour {
 		AmIChopped = true;
 		WoodView.SetActive (true);
 		TreeView.SetActive (false);
+		TreeBend1.SetActive (false);
+		TreeBend2.SetActive (false);
+		TreeBend3.SetActive (false);
 
 	}
 
 	void SwitchTreePanels() {
-		if (IsItAStorm) {
-			if (!WoodView.activeSelf) {
-				if (Time.time > NextPanelSwitchTimeTree) {
+		if (Thermometer.inst.IsItAStorm) {
+			if (!AmIChopped) {
+				while (Time.time > NextPanelSwitchTimeTree) {
 					if (TreeView.activeSelf) {
 						TreeView.SetActive (false);
 						TreeBend1.SetActive (true);
@@ -79,13 +84,6 @@ public class Tree : MonoBehaviour {
 		}
 
 	}
-
-	public void StormForTrees() {
-		IsItAStorm = true;
-	}
-
-	public void StopStormForTrees() {
-		IsItAStorm = false;
-	}
+		
 
 }
