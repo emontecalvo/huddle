@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\IntroMgr.cs" />
      <Compile Include="Assets\Scripts\Jello.cs" />
      <Compile Include="Assets\Scripts\JelloMgr.cs" />
+     <Compile Include="Assets\Scripts\StormPanel.cs" />
      <Compile Include="Assets\Scripts\Thermometer.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\TreeMgr.cs" />
