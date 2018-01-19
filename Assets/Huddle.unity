@@ -345,7 +345,7 @@ Prefab:
     - target: {fileID: 224790513583755136, guid: df7768c4186494420a884509749b0cb6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 600.00006
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 224790513583755136, guid: df7768c4186494420a884509749b0cb6,
         type: 2}
@@ -8810,7 +8810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: chop treesto bring wood back and feed the fire
+  m_Text: chop trees to bring wood back and feed the fire
 --- !u!222 &627418809
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14396,7 +14396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 364.99997, y: -36}
+  m_AnchoredPosition: {x: 365, y: -36}
   m_SizeDelta: {x: 50, y: 71.989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876463999
@@ -15253,7 +15253,7 @@ Prefab:
     - target: {fileID: 224790513583755136, guid: df7768c4186494420a884509749b0cb6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 466.6667
+      value: 466.66675
       objectReference: {fileID: 0}
     - target: {fileID: 224790513583755136, guid: df7768c4186494420a884509749b0cb6,
         type: 2}
@@ -21980,15 +21980,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1285303639584854, guid: 5d2def035b8424ec0b7f88ae677ddcd8, type: 2}
-      propertyPath: m_Name
-      value: Jello-Theodore
-      objectReference: {fileID: 0}
     - target: {fileID: 114721839247374278, guid: 5d2def035b8424ec0b7f88ae677ddcd8,
         type: 2}
       propertyPath: CurrentUIFace
       value: 
       objectReference: {fileID: 19775074}
+    - target: {fileID: 1285303639584854, guid: 5d2def035b8424ec0b7f88ae677ddcd8, type: 2}
+      propertyPath: m_Name
+      value: Jello-Theodore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d2def035b8424ec0b7f88ae677ddcd8, type: 2}
   m_IsPrefabParent: 0
@@ -23128,7 +23128,7 @@ MonoBehaviour:
   IsGame: 0
   IsExtro: 0
   GameStartTime: 0
-  GameLength: 180
+  GameLength: 10
 --- !u!4 &1610299855
 Transform:
   m_ObjectHideFlags: 0
@@ -27405,6 +27405,7 @@ MonoBehaviour:
   MainParticle: {fileID: 849999906}
   IsItAStorm: 0
   TotalFill: 0
+  Thermo: {fileID: 2102374746}
 --- !u!1 &2116703159
 GameObject:
   m_ObjectHideFlags: 0

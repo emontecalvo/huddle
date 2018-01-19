@@ -36,6 +36,8 @@ public class Thermometer : MonoBehaviour
 
 	public float TotalFill;
 
+	public GameObject Thermo;
+
 	void Start ()
 	{
 		
@@ -43,6 +45,13 @@ public class Thermometer : MonoBehaviour
 
 	void Update ()
 	{
+
+		if (GamePhaseMgr.inst.IsGame) {
+			Thermo.SetActive (true);
+		} else {
+			Thermo.SetActive (false);
+		}
+
 		if (!GamePhaseMgr.inst.IsGame) {
 			return;
 		}
@@ -86,6 +95,9 @@ public class Thermometer : MonoBehaviour
 		}
 
 		LastTime = time;
+
+
+
 	}
 
 	void BeginStorm ()
