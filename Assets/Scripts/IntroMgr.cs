@@ -32,6 +32,9 @@ public class IntroMgr : MonoBehaviour
 
 	void Start ()
 	{
+		vehicleIntroPanel1.inst.enabled = true;
+		VehicleIntroPanel2.inst.enabled = true;
+		VehicleIntroPanel3.inst.enabled = true;
 		Panel0.SetActive (true);
 		Panel1.SetActive (false);
 		Panel2.SetActive (false);

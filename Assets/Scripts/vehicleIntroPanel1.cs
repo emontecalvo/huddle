@@ -21,6 +21,12 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 	public Button BoatBtn;
 	public Button TrainBtn;
 
+
+	public Image CarImg;
+	public Image PlaneImg;
+	public Image BoatImg;
+	public Image TrainImg;
+
 	public Image CarBackgroundImg;
 	public Image PlaneBackgroundImg;
 	public Image BoatBackgroundImg;
@@ -48,6 +54,8 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 		PlaneBackgroundImg.color = InactiveColor;
 		BoatBackgroundImg.color = InactiveColor;
 		TrainBackgroundImg.color = InactiveColor;
+		VehicleIntroPanel2.inst.SetVehicle (CarImg.sprite);
+		VehicleIntroPanel3.inst.SetVehicleCrash (CarImg.sprite);
 	}
 
 	void PlaneBtnClicked() {
@@ -55,6 +63,8 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 		PlaneBackgroundImg.color = ActiveColor;
 		BoatBackgroundImg.color = InactiveColor;
 		TrainBackgroundImg.color = InactiveColor;
+		VehicleIntroPanel2.inst.SetVehicle (PlaneImg.sprite);
+		VehicleIntroPanel3.inst.SetVehicleCrash (PlaneImg.sprite);
 	}
 
 	void BoatBtnClicked() {
@@ -62,6 +72,8 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 		PlaneBackgroundImg.color = InactiveColor;
 		BoatBackgroundImg.color = ActiveColor;
 		TrainBackgroundImg.color = InactiveColor;
+		VehicleIntroPanel2.inst.SetVehicle (BoatImg.sprite);
+		VehicleIntroPanel3.inst.SetVehicleCrash (BoatImg.sprite);
 	}
 
 	void TrainBtnClicked() {
@@ -69,11 +81,13 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 		PlaneBackgroundImg.color = InactiveColor;
 		BoatBackgroundImg.color = InactiveColor;
 		TrainBackgroundImg.color = ActiveColor;
+		VehicleIntroPanel2.inst.SetVehicle (TrainImg.sprite);
+		VehicleIntroPanel3.inst.SetVehicleCrash (TrainImg.sprite);
 	}
 
-	void OnValidate() {
-		CarBtnClicked ();
-	}
+//	void OnValidate() {
+//		CarBtnClicked ();
+//	}
 
 
 }
