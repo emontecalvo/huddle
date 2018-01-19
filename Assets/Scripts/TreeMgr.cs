@@ -18,14 +18,10 @@ public class TreeMgr : MonoBehaviour {
 	public List <Tree> AllTrees = new List<Tree> ();
 
 	public void Register (Tree tree) {
-
 		AllTrees.Add (tree);
-
 	}
 
 	public void Unregister (Tree tree) {
-
 		AllTrees.Remove (tree);
-
 	}
 }

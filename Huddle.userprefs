@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tree.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fire.cs">
     <Files>
-      <File FileName="Assets/Scripts/Jello.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fire.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/JelloMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TreeMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Tree.cs" Line="84" Column="33" />
-      <File FileName="Assets/Scripts/FacePanelUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Thermometer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Tree.cs" Line="39" Column="4" />
+      <File FileName="Assets/Scripts/Thermometer.cs" Line="105" Column="2" />
+      <File FileName="Assets/Scripts/GamePhaseMgr.cs" Line="24" Column="23" />
+      <File FileName="Assets/Scripts/IntroMgr.cs" Line="79" Column="1" />
+      <File FileName="Assets/Scripts/InstructionPanelMgr.cs" Line="79" Column="1" />
+      <File FileName="Assets/Scripts/Jello.cs" Line="260" Column="2" />
+      <File FileName="Assets/Scripts/AutoLayerSort.cs" Line="20" Column="48" />
+      <File FileName="Assets/Scripts/JelloMgr.cs" Line="25" Column="2" />
+      <File FileName="Assets/Scripts/TreeMgr.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/vehicleIntroPanel1.cs" Line="86" Column="1" />
+      <File FileName="Assets/Scripts/VehicleIntroPanel2.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/VehicleIntroPanel3.cs" Line="33" Column="1" />
+      <File FileName="Assets/Scripts/Fire.cs" Line="70" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

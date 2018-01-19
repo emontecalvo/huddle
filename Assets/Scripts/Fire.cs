@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-
-
 	public List <GameObject> FireFrames0 = new List<GameObject> ();
 	public List <GameObject> FireFrames = new List<GameObject> ();
 	public List <GameObject> FireFrames2 = new List<GameObject> ();
@@ -35,7 +33,7 @@ public class Fire : MonoBehaviour
 
 	void Update ()
 	{
-		NumberOfWood -= 0.01f * Time.deltaTime;
+		NumberOfWood -= 0.05f * Time.deltaTime;
 
 		List <GameObject> ActiveFrames;
 
@@ -51,6 +49,10 @@ public class Fire : MonoBehaviour
 			FireFrames0 [0].SetActive (false);
 		} else {
 			FireFrames0 [0].SetActive (true);
+			for (int m = 0; m < FireFrames.Count; m++) {
+				FireFrames [m].SetActive (false);
+				FireFrames2 [m].SetActive (false);
+			}
 		}
 
 		if (NumberOfWood <= 0) {
@@ -65,10 +67,11 @@ public class Fire : MonoBehaviour
 
 		if (CurrentLevel == 1) {
 			ActiveFrames = FireFrames;
-		} else {
+		} else if (CurrentLevel == 0) {
+			ActiveFrames = FireFrames0;
+		}else {
 			ActiveFrames = FireFrames2;
 		}
-
 
 		TimeUntilNextFrame -= Time.deltaTime;
 

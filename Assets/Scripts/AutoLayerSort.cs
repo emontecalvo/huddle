@@ -8,11 +8,9 @@ public class AutoLayerSort : MonoBehaviour {
 	SpriteRenderer mySpriteRenderer;
 	public int layerOffset = 0;
 
-
 	void Start () {
 		mySpriteRenderer = GetComponent<SpriteRenderer> ();
 	}
-	
 
 	void Update () {
 		Vector3 pos = transform.position;
@@ -20,6 +18,5 @@ public class AutoLayerSort : MonoBehaviour {
 		int sortingOrder = 1000 - (int)(heightRatio * 1000);
 		sortingOrder += layerOffset;
 		mySpriteRenderer.sortingOrder = sortingOrder;
-
 	}
 }

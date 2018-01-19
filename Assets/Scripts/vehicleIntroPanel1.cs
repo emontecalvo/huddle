@@ -21,7 +21,6 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 	public Button BoatBtn;
 	public Button TrainBtn;
 
-
 	public Image CarImg;
 	public Image PlaneImg;
 	public Image BoatImg;
@@ -36,14 +35,12 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 	public Color InactiveColor;
 
 
-
 	void Start () {
 		CarBtn.onClick.AddListener(CarBtnClicked);
 		PlaneBtn.onClick.AddListener(PlaneBtnClicked);
 		BoatBtn.onClick.AddListener(BoatBtnClicked);
 		TrainBtn.onClick.AddListener(TrainBtnClicked);
 	}
-	
 
 	void Update () {
 		
@@ -84,10 +81,5 @@ public class vehicleIntroPanel1 : MonoBehaviour {
 		VehicleIntroPanel2.inst.SetVehicle (TrainImg.sprite);
 		VehicleIntroPanel3.inst.SetVehicleCrash (TrainImg.sprite);
 	}
-
-//	void OnValidate() {
-//		CarBtnClicked ();
-//	}
-
 
 }

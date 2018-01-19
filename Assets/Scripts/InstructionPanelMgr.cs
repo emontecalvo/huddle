@@ -40,8 +40,6 @@ public class InstructionPanelMgr : MonoBehaviour {
 		InstructButton3.onClick.AddListener (IButton3Clicked);
 	}
 
-	
-
 	void Update () {
 		
 	}

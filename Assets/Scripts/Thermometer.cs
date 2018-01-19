@@ -52,8 +52,6 @@ public class Thermometer : MonoBehaviour
 			fillAmount = 0.1f;
 			randomFill = Mathf.Cos (time) * 0.05f;
 			TotalFill = fillAmount + randomFill;
-
-			//		Debug.Log ("Time dot time:" + Time.time.ToString () + "Time delta:" + Time.deltaTime.ToString ());		
 		} else {
 			TotalFill -= 1 * Time.deltaTime;
 			if (TotalFill < 0) {
@@ -62,8 +60,6 @@ public class Thermometer : MonoBehaviour
 		}
 
 		ThermoFillImg.fillAmount = TotalFill;
-
-
 
 		if (time > StormOneStartTime && LastTime < StormOneStartTime) {
 			BeginStorm ();
@@ -90,12 +86,10 @@ public class Thermometer : MonoBehaviour
 		}
 
 		LastTime = time;
-
 	}
 
 	void BeginStorm ()
 	{
-//		Debug.Log ("BEGIN STORM!");
 		IsItAStorm = true;
 		ThermoIceFill.gameObject.SetActive (true);
 		ThermoIceFill.DOFillAmount (1f, 1f);
@@ -103,7 +97,6 @@ public class Thermometer : MonoBehaviour
 
 	void EndStorm ()
 	{
-//		Debug.Log ("You survived, end of storm");
 		IsItAStorm = false;
 		ThermoIceFill.DOFillAmount (0f, 1f).OnComplete (() => {
 			ThermoIceFill.gameObject.SetActive (false);

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class VehicleIntroPanel3 : MonoBehaviour {
 
-
 	private static VehicleIntroPanel3 _inst = null;
 
 	public static VehicleIntroPanel3 inst {
@@ -22,7 +21,6 @@ public class VehicleIntroPanel3 : MonoBehaviour {
 	void Start () {
 
 	}
-
 
 	void Update () {
 

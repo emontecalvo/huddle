@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class JelloMgr : MonoBehaviour
 {
-
 	private static JelloMgr _inst = null;
 
 	public static JelloMgr inst {

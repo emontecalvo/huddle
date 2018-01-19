@@ -7,7 +7,6 @@ public class Tree : MonoBehaviour {
 
 	bool AmIChopped = false;
 
-
 	public GameObject TreeView;
 	public GameObject WoodView;
 
@@ -38,7 +37,6 @@ public class Tree : MonoBehaviour {
 		if (TreeMgr.inst != null) {
 			TreeMgr.inst.Unregister (this);
 		}
-
 	}
 
 	float TimeLast = 0;
@@ -53,20 +51,16 @@ public class Tree : MonoBehaviour {
 			SwitchTreePanels ();
 		}
 
-
-
 		if (GamePhaseMgr.inst.IsExtro && time > TurnIntoPalmTreeTime && TimeLast < TurnIntoPalmTreeTime) {
 			PalmTree.SetActive(true);
 			PalmTree.transform.localScale = new Vector3 (0f, 2f, 1f);
 			Sequence sequence = DOTween.Sequence ();
-			sequence.Append(TreeView.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Insert(0, TreeView.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Insert(0, TreeBend1.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Insert(0, TreeBend2.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Insert(0, TreeBend3.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
+			sequence.Insert(0, WoodView.transform.DOScale(new Vector3 (0f, 2f, 1f), 0.2f));
 			sequence.Append (PalmTree.transform.DOScale (new Vector3 (1f, 1f, 1f), 0.2f));
-//			TreeView.SetActive (false);
-//			WoodView.SetActive (false);
-//			TreeBend1.SetActive (false);
-//			TreeBend2.SetActive (false);
-//			TreeBend3.SetActive (false);
-
 		}
 		TimeLast = time;
 	}
@@ -78,45 +72,43 @@ public class Tree : MonoBehaviour {
 		TreeBend1.SetActive (false);
 		TreeBend2.SetActive (false);
 		TreeBend3.SetActive (false);
-
 	}
 
 	void SwitchTreePanels() {
-		if (Thermometer.inst.IsItAStorm) {
-			if (!AmIChopped) {
-				if (NextPanelSwitchTimeTree < 0) {
-					NextPanelSwitchTimeTree = Time.time + UnityEngine.Random.Range (0f, 1f);
-				}
-				if (Time.time > NextPanelSwitchTimeTree) {
-					if (TreeView.activeSelf) {
-						TreeView.SetActive (false);
-						TreeBend1.SetActive (true);
-						NextPanelSwitchTimeTree += 0.5f;
-					} else if (TreeBend1.activeSelf) {
-						TreeBend1.SetActive (false);
-						TreeBend2.SetActive (true);
-						NextPanelSwitchTimeTree += 0.5f;
-					} else if (TreeBend2.activeSelf) {
-						TreeBend2.SetActive (false);
-						TreeBend3.SetActive (false);
-						NextPanelSwitchTimeTree += 0.5f;
-					} else if (TreeBend3.activeSelf) {
-						TreeBend3.SetActive (false);
-						TreeView.SetActive (true);
-						NextPanelSwitchTimeTree += 0.5f;
+		if (GamePhaseMgr.inst.IsGame) {
+			if (Thermometer.inst.IsItAStorm) {
+				if (!AmIChopped) {
+					if (NextPanelSwitchTimeTree < 0) {
+						NextPanelSwitchTimeTree = Time.time + UnityEngine.Random.Range (0f, 1f);
 					}
-				}
-			}		
-		} else {
-			NextPanelSwitchTimeTree = -1;
+					if (Time.time > NextPanelSwitchTimeTree) {
+						if (TreeView.activeSelf) {
+							TreeView.SetActive (false);
+							TreeBend1.SetActive (true);
+							NextPanelSwitchTimeTree += 0.5f;
+						} else if (TreeBend1.activeSelf) {
+							TreeBend1.SetActive (false);
+							TreeBend2.SetActive (true);
+							NextPanelSwitchTimeTree += 0.5f;
+						} else if (TreeBend2.activeSelf) {
+							TreeBend2.SetActive (false);
+							TreeBend3.SetActive (false);
+							NextPanelSwitchTimeTree += 0.5f;
+						} else if (TreeBend3.activeSelf) {
+							TreeBend3.SetActive (false);
+							TreeView.SetActive (true);
+							NextPanelSwitchTimeTree += 0.5f;
+						}
+					}
+				}		
+			} else {
+				NextPanelSwitchTimeTree = -1;
+			}
 		}
-			
 
 		if (!WoodView.activeSelf && !TreeBend1.activeSelf && !TreeBend2.activeSelf && !TreeBend3.activeSelf) {
 			TreeView.SetActive (true);
 		}
-
 	}
-		
 
 }

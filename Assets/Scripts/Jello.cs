@@ -109,9 +109,6 @@ public class Jello : MonoBehaviour
 	}
 
 	void ChopTrees() {
-		// for each tree find distance from my jello to tree
-		// if distance is less than X, chop the tree down
-		// add wood to jelllo
 		if (BeingHauled != null) {
 			return;
 		}
@@ -125,7 +122,6 @@ public class Jello : MonoBehaviour
 				BeingHauled = tree;
 			}
 		}
-
 	}
 
 	void HaulTrees() {
@@ -140,9 +136,6 @@ public class Jello : MonoBehaviour
 			BeingHauled.transform.position = woodPos2;
 			PutWoodInFire ();
 		}
-			
-
-
 	}
 
 	void PutWoodInFire() {
@@ -154,7 +147,6 @@ public class Jello : MonoBehaviour
 			Fire.inst.ReceiveWood (BeingHauled);
 			BeingHauled = null;
 		}
-
 	}
 
 	void TemperatureLogic() {
@@ -188,8 +180,6 @@ public class Jello : MonoBehaviour
 			CurrentUIFace.SetJelloLonelyText(HappyTxt);
 		}
 
-
-
 		if (IsNextToFire == false && IsNextToOther == false) {
 			if (Thermometer.inst.IsItAStorm) {
 				tempDelta = -0.5f;
@@ -207,7 +197,6 @@ public class Jello : MonoBehaviour
 				CurrentUIFace.SetJelloFrozenText (FrozenTxt);
 				MyTemp = 0;
 			}
-				
 		}
 
 		if (MyTemp > 0) {
@@ -246,16 +235,18 @@ public class Jello : MonoBehaviour
 			AmIFrozen = true;
 			AmIToasty = false;
 		}
+
 		if (MyTemp > maxTemp) {
 			MyTemp = maxTemp;
 		}
+
 		if (MyTemp >= 11) {
 			AmIFrozen = false;
 			AmIToasty = true;
 			FaceSprite.sprite = ToastyFace;
 			CurrentUIFace.SetFace (ToastyFace);
-
 		}
+
 		if (MyTemp < 11 && MyTemp > 0) {
 			AmIFrozen = false;
 			AmIToasty = false;
@@ -264,8 +255,6 @@ public class Jello : MonoBehaviour
 		float tempRatio = MyTemp / 11f;
 		float maskZPos = tempRatio * -2.4f;
 		SpriteMask.transform.localPosition = new Vector3 (0, 0, maskZPos);
-
-
 	}
 	
 }

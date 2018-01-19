@@ -36,8 +36,7 @@ public class ExtroMgr : MonoBehaviour
 		PlayAgainBtn.onClick.AddListener (PlayAgain);
 		QuitBtn.onClick.AddListener (ExitProgram);
 	}
-
-
+		
 	void Update ()
 	{
 		float time = GamePhaseMgr.inst.GetGameTime ();
