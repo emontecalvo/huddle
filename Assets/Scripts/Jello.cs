@@ -27,6 +27,9 @@ public class Jello : MonoBehaviour
 	public Sprite RightEyes;
 	public Sprite DownEyes;
 
+	public GameObject HulaSkirt;
+	public GameObject Sunglasses;
+
 	public GameObject JelloFaceFlake;
 	public GameObject JelloAboveFlake;
 
@@ -47,6 +50,8 @@ public class Jello : MonoBehaviour
 		JelloMgr.inst.Register (this);
 		JelloFaceFlake.SetActive(false);
 		JelloAboveFlake.SetActive(false);
+		HulaSkirt.SetActive (false);
+		Sunglasses.SetActive (false);
 	}
 
 	void Update () 
@@ -60,6 +65,15 @@ public class Jello : MonoBehaviour
 				HaulTrees ();
 			}		
 		}
+
+		if (GamePhaseMgr.inst.IsExtro) {
+			HulaSprite ();
+		}
+	}
+
+	void HulaSprite() {
+		HulaSkirt.SetActive (true);
+		Sunglasses.SetActive (true);
 	}
 
 	void MovementLogic () {
