@@ -57,7 +57,9 @@ public class Jello : MonoBehaviour
 	void Update () 
 	{
 		if (GamePhaseMgr.inst.IsGame) {
-			MovementLogic ();
+			if (!AmIFrozen) {
+				MovementLogic ();		
+			}
 			ChopTrees ();
 			TemperatureLogic ();
 
@@ -189,14 +191,15 @@ public class Jello : MonoBehaviour
 
 
 		if (IsNextToFire == false && IsNextToOther == false) {
-//			tempDelta = -0.03f;    testing speed below:
-			tempDelta = -1f;
+			tempDelta = -0.2f;
+//			tempDelta = -1f;
 
 			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
 				AmIFrozen = true;
 				JelloFaceFlake.SetActive (true);
 				JelloAboveFlake.SetActive (true);
+
 
 				CurrentUIFace.SetJelloFrozenText (FrozenTxt);
 				MyTemp = 0;
@@ -211,7 +214,7 @@ public class Jello : MonoBehaviour
 
 		if (IsNextToFire == true && IsNextToOther == true) {
 			AmIFrozen = false;
-			tempDelta = 0.05f;
+			tempDelta = 0.4f;
 			maxTemp = 11f;
 
 			CurrentUIFace.SetJelloFrozenText(ToastyTxt);
@@ -222,18 +225,19 @@ public class Jello : MonoBehaviour
 			AmIFrozen = false;
 			AmIToasty = false;
 			maxTemp = 10f;
-			tempDelta = 0.03f;
+			tempDelta = 0.04f;
 			CurrentUIFace.SetJelloFrozenText(WarmingUpTxt);
 		}
 
 		if (IsNextToFire == false && IsNextToOther == true) {
 			AmIFrozen = false;
 			AmIToasty = false;
-			tempDelta = 0.02f;
+			tempDelta = 0.03f;
 			CurrentUIFace.SetJelloFrozenText(WarmingUpTxt);
 		}
 
 		MyTemp = MyTemp + tempDelta * Time.deltaTime;
+
 		if (MyTemp < 0f) {
 			MyTemp = 0f;
 			AmIFrozen = true;

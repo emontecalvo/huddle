@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4339703029247672}
   - component: {fileID: 212209736629128194}
+  - component: {fileID: 114555808387085308}
   m_Layer: 0
   m_Name: jello-red-view
   m_TagString: Untagged
@@ -53,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4830643035815448}
   - component: {fileID: 212584848144405436}
+  - component: {fileID: 114835567464768992}
   m_Layer: 0
   m_Name: snowflake-upper
   m_TagString: Untagged
@@ -69,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4144726667492050}
   - component: {fileID: 212246499013569864}
+  - component: {fileID: 114482356976816852}
   m_Layer: 0
   m_Name: toasty-face
   m_TagString: Untagged
@@ -85,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4582107372105040}
   - component: {fileID: 212065748145603470}
+  - component: {fileID: 114603416247278614}
   m_Layer: 0
   m_Name: HulaSkirt
   m_TagString: Untagged
@@ -117,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4424608795901502}
   - component: {fileID: 212895816105167628}
+  - component: {fileID: 114914036045043604}
   m_Layer: 0
   m_Name: jello-blue-view
   m_TagString: Untagged
@@ -149,6 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705465688919576}
   - component: {fileID: 212879478224667476}
+  - component: {fileID: 114928757364342870}
   m_Layer: 0
   m_Name: snowflake-face
   m_TagString: Untagged
@@ -165,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4732045534087072}
   - component: {fileID: 212138204528031598}
+  - component: {fileID: 114519032198395208}
   m_Layer: 0
   m_Name: Sunglasses
   m_TagString: Untagged
@@ -181,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4392690131002468}
   - component: {fileID: 212294612732269548}
+  - component: {fileID: 114897488563816808}
   m_Layer: 0
   m_Name: color
   m_TagString: Untagged
@@ -341,6 +349,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114482356976816852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185797940883586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 5
+--- !u!114 &114519032198395208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906666630295502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114555808387085308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1080605730337596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114603416247278614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281479143002352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
 --- !u!114 &114721839247374278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,6 +431,54 @@ MonoBehaviour:
   JelloAboveFlake: {fileID: 1185795888372602}
   CurrentUIFace: {fileID: 0}
   SpriteMask: {fileID: 1512486327664308}
+--- !u!114 &114835567464768992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185795888372602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114897488563816808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928213184180784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114914036045043604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342060795642520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114928757364342870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699316458430254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
 --- !u!198 &198907529589802554
 ParticleSystem:
   m_ObjectHideFlags: 1

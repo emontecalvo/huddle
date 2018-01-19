@@ -21,8 +21,8 @@ public class GamePhaseMgr : MonoBehaviour {
 	public bool IsExtro = false;
 	public float GameStartTime;
 
-	float GameLength = 10f;
-	// float GameLength = 180f;
+//	float GameLength = 10f;
+	float GameLength = 180f;
 
 	void Start () {
 		

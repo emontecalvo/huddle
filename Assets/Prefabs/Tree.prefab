@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130762956984110}
   - component: {fileID: 212601136426635512}
+  - component: {fileID: 114084431539583446}
   m_Layer: 0
   m_Name: PalmTree
   m_TagString: Untagged
@@ -36,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032939852440976}
   - component: {fileID: 212504616442900452}
+  - component: {fileID: 114353048806478058}
   m_Layer: 0
   m_Name: TreeBend3
   m_TagString: Untagged
@@ -52,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4767064402542692}
   - component: {fileID: 212698140850917610}
+  - component: {fileID: 114054349805055470}
   m_Layer: 0
   m_Name: TreeBend2
   m_TagString: Untagged
@@ -84,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4477633529014800}
   - component: {fileID: 212584661941955470}
+  - component: {fileID: 114866463768983164}
   m_Layer: 0
   m_Name: WoodView
   m_TagString: Untagged
@@ -100,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463646372976524}
   - component: {fileID: 212704612410239732}
+  - component: {fileID: 114988087686254234}
   m_Layer: 0
   m_Name: TreeView
   m_TagString: Untagged
@@ -116,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4617094282646354}
   - component: {fileID: 212432958440969816}
+  - component: {fileID: 114461865021887526}
   m_Layer: 0
   m_Name: TreeBend1
   m_TagString: Untagged
@@ -220,6 +226,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114054349805055470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560535446354716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114084431539583446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303302824262512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114353048806478058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383765814283470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
 --- !u!114 &114401638936374878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +281,42 @@ MonoBehaviour:
   PalmTree: {fileID: 1303302824262512}
   NextPanelSwitchTimeTree: 0.5
   TurnIntoPalmTreeTime: 0
+--- !u!114 &114461865021887526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981058853940826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114866463768983164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833491730615150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
+--- !u!114 &114988087686254234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841758965261668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abe7cccdf0a46248e01a8d790d9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerOffset: 0
 --- !u!212 &212432958440969816
 SpriteRenderer:
   m_ObjectHideFlags: 1
