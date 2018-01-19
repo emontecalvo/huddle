@@ -191,8 +191,11 @@ public class Jello : MonoBehaviour
 
 
 		if (IsNextToFire == false && IsNextToOther == false) {
-			tempDelta = -0.2f;
-//			tempDelta = -1f;
+			if (Thermometer.inst.IsItAStorm) {
+				tempDelta = -0.5f;
+			} else {
+				tempDelta = -0.2f;
+			}
 
 			CurrentUIFace.SetJelloFrozenText(GettingColdTxt);
 			if (MyTemp <= 0) {
