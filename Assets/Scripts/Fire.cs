@@ -6,7 +6,7 @@ public class Fire : MonoBehaviour
 {
 
 
-
+	public List <GameObject> FireFrames0 = new List<GameObject> ();
 	public List <GameObject> FireFrames = new List<GameObject> ();
 	public List <GameObject> FireFrames2 = new List<GameObject> ();
 	public int CurrentFrame;
@@ -14,6 +14,8 @@ public class Fire : MonoBehaviour
 	public float TimeBetweenFrames;
 	public int CurrentLevel;
 	public ParticleSystem WoodAddToFireParticle;
+
+	public float NumberOfWood;
 
 	private static Fire _inst = null;
 
@@ -28,21 +30,36 @@ public class Fire : MonoBehaviour
 		
 	void Start ()
 	{
-		
+		NumberOfWood = 2.9f;
 	}
 
 	void Update ()
 	{
+		NumberOfWood -= 0.01f * Time.deltaTime;
+
 		List <GameObject> ActiveFrames;
 
 		if (CurrentLevel == 1) {
 			for (int j = 0; j < FireFrames2.Count; j++) {
-				FireFrames2 [j].SetActive(false);
-			}			
+				FireFrames2 [j].SetActive (false);
+			}
+			FireFrames0 [0].SetActive (false);
 		} else if (CurrentLevel == 2) {
 			for (int k = 0; k < FireFrames.Count; k++) {
-				FireFrames [k].SetActive(false);
+				FireFrames [k].SetActive (false);
 			}
+			FireFrames0 [0].SetActive (false);
+		} else {
+			FireFrames0 [0].SetActive (true);
+		}
+
+		if (NumberOfWood <= 0) {
+			NumberOfWood = 0;
+			CurrentLevel = 0;
+		} else if (NumberOfWood < 3) {
+			CurrentLevel = 1;
+		} else {
+			CurrentLevel = 2;
 		}
 
 
@@ -78,5 +95,6 @@ public class Fire : MonoBehaviour
 		WoodAddToFireParticle.Clear ();
 		WoodAddToFireParticle.Stop();
 		WoodAddToFireParticle.Play();
+		NumberOfWood += 1;
 	}
 }
